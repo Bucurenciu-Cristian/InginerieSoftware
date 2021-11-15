@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
  */
 public class User implements Serializable {
 
+    private Integer id;
     private String username;
     private String email;
     private String password;
@@ -21,6 +22,14 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "user")
     private Collection<Car> cars;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;

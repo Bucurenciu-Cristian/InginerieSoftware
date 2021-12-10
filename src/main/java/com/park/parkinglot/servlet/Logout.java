@@ -54,7 +54,7 @@ public class Logout extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Logout V1.0";
     }
     
 }

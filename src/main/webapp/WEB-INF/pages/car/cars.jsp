@@ -9,8 +9,8 @@
 
 <t:pageTemplate pageTitle="Cars">
     <h1>Cars</h1>
-    <form action="${pageContext.request.contextPath}/Cars">
-        <a class="btn btn-primary btn-lg" href="${pageContext.request.contextPath}/AddCar" role="button">AddCar</a>
+    <form action="${pageContext.request.contextPath}/Cars/Update" method="POST">
+        <a class="btn btn-primary btn-lg" href="${pageContext.request.contextPath}/Cars/Create" role="button">AddCar</a>
         <button class="btn btn-danger" type="submit">Delete Cars</button>
         <c:forEach var="car" items="${cars}" varStatus="status" >
             <div class="row">
@@ -19,7 +19,7 @@
                 <div class="col-md-3">${car.parkingSpot}</div>
                 <div class="col-md-3">${car.username}</div>
                 <div class="col-md-2">
-                    <a class="btn btn-secondary btn-lg" href="${pageContext.request.contextPath}/EditCar?id=${car.id}" role="button">Edit Car</a>
+                    <a class="btn btn-secondary btn-lg" href="${pageContext.request.contextPath}/Cars/Update?id=${car.id}" role="button">Edit Car</a>
                 </div>
             </div>
         </c:forEach>

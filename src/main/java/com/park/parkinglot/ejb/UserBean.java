@@ -21,6 +21,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class UserBean {
+
     private static final Logger LOG = Logger.getLogger(CarBean.class.getName());
 
     @PersistenceContext
@@ -41,7 +42,7 @@ public class UserBean {
     private List<UserDetails> copyUsersToDetails(List<User> users) {
         List<UserDetails> detailsList = new ArrayList<>();
         for (User user : users) {
-            UserDetails userDetails = new UserDetails(                    user.getId(),
+            UserDetails userDetails = new UserDetails(user.getId(),
                     user.getUsername(),
                     user.getEmail(),
                     user.getPosition()
@@ -50,4 +51,14 @@ public class UserBean {
         }
         return detailsList;
     }
+
+    public void createUser(String username, String email, String passwordSha256, String position) {
+        User user = new User();
+        user.setUsername(username);
+        user.setEmail(email);
+        user.setPassword(passwordSha256);
+        user.setPosition(position);
+        em.persist(user);
+    }
+
 }

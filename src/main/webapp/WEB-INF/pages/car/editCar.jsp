@@ -11,7 +11,7 @@
 
         <h1>Edit Car</h1>
 
-        <form class="needs-validation" action="${pageContext.request.contextPath}/EditCar" method="POST" novalidate>
+        <form class="needs-validation" action="${pageContext.request.contextPath}/Cars/Update" method="POST" novalidate>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="license_plate">License-plate</label>

@@ -6,7 +6,15 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <t:pageTemplate pageTitle="Login">
+
+    <c:if test = "${message != null}">
+        <div class="alert alert-danger" role="alert">
+            ${message}
+        </div>
+    </c:if>
+
     <form class="form-signin" method="POST" action="j_security_check">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label for="inputEmail" class="sr-only">userName</label>

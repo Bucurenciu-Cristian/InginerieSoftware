@@ -28,16 +28,19 @@ import javax.servlet.http.HttpServletResponse;
 @DeclareRoles({"AdminRole", "ClientRole"})
 @ServletSecurity(
         value = @HttpConstraint(rolesAllowed = {"AdminRole"})
-//,
-//        httpMethodConstraints = {
-//            @HttpMethodConstraint(value = "POST", rolesAllowed = {"AdminRole"})}
+,
+        httpMethodConstraints = {
+            @HttpMethodConstraint(value = "POST", rolesAllowed = {"AdminRole"}),
+            @HttpMethodConstraint(value = "GET", rolesAllowed = {"AdminRole"})
+
+}
 
 )
 @WebServlet(name = "Cars", urlPatterns = {"/Cars"})
 public class Cars extends HttpServlet {
 
     @Inject
-    private CarBean carBean;
+    CarBean carBean;
 
     /**
      * Handles the HTTP <code>GET</code> method.
